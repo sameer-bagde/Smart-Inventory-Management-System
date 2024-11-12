@@ -1,7 +1,7 @@
 # Solar
 
 
-# 1. Introduction {#introduction}
+# 1. Introduction 
 
 **Problem Statement**
 
@@ -23,7 +23,7 @@ associated costs.
   actionable insights into inventory management, improving stock
   efficiency and reducing operational costs.
 
-# 2. Methodology {#methodology}
+# 2. Methodology
 
 To address the problem of inventory demand forecasting, our team
 implemented a streamlined approach combining data engineering and
@@ -62,7 +62,7 @@ and inventory levels.
   scalability and faster analysis, supporting real-time inventory
   management.
 
-# 3. Process Steps {#process-steps}
+# 3. Process Steps 
 
 Step 1: Data Collection and Preparation
 
@@ -122,7 +122,7 @@ Step 5: Generate Final Reports and Insights
 - Interpret Results: Ensure inventory aligns with forecasted demand and
   adjust strategies accordingly.
 
-# 4. Results/Observations {#resultsobservations}
+# 4. Results/Observations 
 
 **Key Features**
 
@@ -210,7 +210,7 @@ Step 5: Generate Final Reports and Insights
 - Data Quality Challenges: Missing data and outliers required extra
   effort in cleaning, impacting initial model performance.
 
-# 5. Conclusion {#conclusion}
+# 5. Conclusion 
 
 This project was an exciting journey into the world of inventory
 forecasting, where we applied an ARIMA-based model to solve a real-world
