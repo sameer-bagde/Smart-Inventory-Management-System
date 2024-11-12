@@ -1,6 +1,6 @@
-
-import numpy as np
+import nbformat
 import pandas as pd
+import numpy as np
 from scipy.optimize import minimize
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -34,8 +34,21 @@ def optimize_inventory(demand, holding_cost, ordering_cost, stockout_cost, lead_
                       bounds=((1, None),))
     return result.x[0]
 
-# Assuming df_inventory is already defined as follows:
-# Example df_inventory already loaded
+# Load the notebook and extract the df_inventory DataFrame
+def load_df_inventory_from_notebook(notebook_path):
+    with open(notebook_path, 'r', encoding='utf-8') as f:
+        notebook_content = nbformat.read(f, as_version=4)
+    
+    # Find the cell that contains the DataFrame 'df_inventory'
+    for cell in notebook_content.cells:
+        if cell.cell_type == 'code' and 'df_inventory' in cell.source:
+            # Execute the code in the notebook cell to create df_inventory
+            exec(cell.source)
+    
+    return df_inventory
+
+# Load df_inventory from the notebook
+df_inventory = load_df_inventory_from_notebook('inventory-forecast.ipynb')
 
 # Calculate sales efficiency for all products
 df_inventory['sales_efficiency'] = df_inventory['avg_items_sold_per_month'] / df_inventory['inventory_qty']
@@ -131,4 +144,3 @@ ax3.pie(inventory_status_counts, labels=inventory_status_counts.index, autopct='
 ax3.set_title('Inventory Status Distribution')
 
 st.pyplot(fig3)
-
